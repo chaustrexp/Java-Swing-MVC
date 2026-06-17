@@ -38,12 +38,12 @@ Java-Swing-MVC/
 │   └── MiPrimeraAppSwing.java
 │
 ├── 📁 MVC Swing - (Version Nueva)/   ← Calculadora científica completa
-│   └── Version Nueva/
-│       ├── Main.java
-│       ├── CalculadoraVista.java
-│       ├── CalculadoraControlador.java
-│       ├── CalculadoraMotor.java
-│       └── MiPrimeraAppSwing.java
+│   ├── Main.java
+│   ├── CalculadoraVista.java
+│   ├── CalculadoraControlador.java
+│   ├── CalculadoraMotor.java
+│   ├── MiPrimeraAppSwing.java
+│   └── README.md
 │
 ├── 📁 Actividad Swing/               ← Ejercicios individuales de componentes
 │   ├── Inicio.java
@@ -191,7 +191,7 @@ javac *.java
 java Main
 
 # 3️⃣ Compilar y ejecutar la Versión Nueva
-cd "../MVC Swing - (Version Nueva)/Version Nueva"
+cd "../MVC Swing - (Version Nueva)"
 javac *.java
 java Main
 
