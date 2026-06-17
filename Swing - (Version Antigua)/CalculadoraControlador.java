@@ -33,15 +33,7 @@ public class CalculadoraControlador implements ActionListener {
             manejarLimpiar();
         } else if (comando.equals("=")) {
             manejarIgual();
-        } else if (comando.equals("π")) {
-            // Caso especial para Pi: borra la pantalla y escribe el valor de Pi
-            vista.setTextoPantalla(String.valueOf(Math.PI));
-            nuevaOperacion = true;
-        } else if (comando.matches("√|sin|cos|tan|x²|log|ln|e\\^x|10\\^x|1/x|n!")) { 
-            // Operadores unarios (de cálculo inmediato)
-            manejarOperadorUnario(comando);
-        } else if (comando.matches("\\+|-|\\*|/|%|x\\^y")) { 
-            // Operadores binarios (requieren dos números y darle al "=")
+        } else { // Es un operador (+, -, *, /)
             manejarOperador(comando);
         }
     }
@@ -62,23 +54,6 @@ public class CalculadoraControlador implements ActionListener {
             nuevaOperacion = true;
         } catch (NumberFormatException ex) {
             // Ignorar si la pantalla está vacía
-        }
-    }
-
-    private void manejarOperadorUnario(String op) {
-        try {
-            double numeroActual = Double.parseDouble(vista.getTextoPantalla());
-            double resultado = motor.calcularUnario(numeroActual, op);
-            
-            // Formatear para no mostrar .0 si es entero
-            if (resultado == (long) resultado) {
-                vista.setTextoPantalla(String.format("%d", (long) resultado));
-            } else {
-                vista.setTextoPantalla(String.valueOf(resultado));
-            }
-            nuevaOperacion = true;
-        } catch (NumberFormatException ex) {
-            vista.setTextoPantalla("Error");
         }
     }
 
